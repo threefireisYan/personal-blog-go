@@ -1,11 +1,11 @@
 [viewer]
-Title = "码神之路Go语言博客"
-Description = "码神之路Go语言博客"
+Title = "三火Go语言博客"
+Description = "三火Go语言博客"
 Logo = "/resource/images/logo.png"
 Navigation = ["首页", "/", "GO语言", "/golang", "归档", "/pigeonhole", "关于", "/about"]
-Bilibili = "https://space.bilibili.com/473844125"
-Zhihu = "https://www.zhihu.com/people/ma-shen-zhi-lu"
-Avatar = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F13147603927%2F1000.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647242040&t=c6108010ed46b4acebe18955acdd2d24"
+Bilibili = "https://www.bilibili.com/"
+Zhihu = "https://www.zhihu.com/"
+Avatar = "https://picx.zhimg.com/v2-a6f0db9230a0e4b67e70524217e009fe_1440w.jpg"
 UserName = "码神之路"
 UserDesc = "长得非常帅的程序员"
 
@@ -14,6 +14,6 @@ CdnURL = "https://static.mszlu.com/goblog/es6/md-assets"
 QiniuAccessKey = "替换自己的"
 QiniuSecretKey = "替换自己的"
 Valine = true
-ValineAppid = "替换自己的"
-ValineAppkey = "替换自己的"
-ValineServerURL = "替换自己的"
+ValineAppid = "ReEvwdfATmC7xZ6GKTE0NAKN-gzGzoHsz"
+ValineAppkey = "KF9qS9RTaZXYXd6JvOiuz6bA"
+ValineServerURL = "https://reevwdfa.lc-cn-n1-shared.com"

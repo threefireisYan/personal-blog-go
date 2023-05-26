@@ -102,3 +102,13 @@ func (*Api) SvarAndUpdatePost(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
+
+func (*Api) Search(w http.ResponseWriter, r *http.Request) {
+	_ = r.ParseForm()
+	condition := r.Form.Get("val")
+
+	searchResp := service.SearchPost(condition)
+
+	common.Success(w, searchResp)
+
+}

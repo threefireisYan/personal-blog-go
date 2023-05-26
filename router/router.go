@@ -15,9 +15,11 @@ func Router() {
 	http.HandleFunc("/login", views.HTML.Login)
 	http.HandleFunc("/p/", views.HTML.Detail)
 	http.HandleFunc("/writing", views.HTML.Writing)
+	http.HandleFunc("/pigeonhole", views.HTML.Pigenohole)
 	http.HandleFunc("/api/v1/post", api.API.SvarAndUpdatePost)
 	http.HandleFunc("/api/v1/post/", api.API.GetPost)
 	http.HandleFunc("/api/v1/qiniu/token", api.API.QiniuToken)
 	http.HandleFunc("/api/v1/login", api.API.Login)
+	http.HandleFunc("/api/v1/post/search", api.API.Search)
 	http.Handle("/resource/", http.StripPrefix("/resource/", http.FileServer(http.Dir("public/resource/"))))
 }

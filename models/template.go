@@ -45,7 +45,7 @@ func (t TemplateBlog) WriteError(w io.Writer, err error) {
 func InitTemplate(templateDir string) (HtmlTemplate, error) {
 
 	tp, err := readTemplate(
-		[]string{"index", "category", "custom", "detail", "login", "Pigeonhole", "writing"},
+		[]string{"index", "category", "custom", "detail", "login", "pigeonhole", "writing"},
 		templateDir,
 	)
 	var htmlTemplate HtmlTemplate

@@ -8,13 +8,23 @@ import (
 	"personal-blog-go/models"
 )
 
-func GetAllIndexInfo(page int, pageSize int) (*models.HomeResponse, error) {
+func GetAllIndexInfo(page int, pageSize int, slug string) (*models.HomeResponse, error) {
 	categorys, err := dao.GetAllCategory()
 	if err != nil {
 		log.Println(err)
 		return nil, err
 	}
-	posts, err := dao.GetAllPost(page, pageSize)
+	var total int
+
+	var posts []models.Post
+	if slug == "" {
+		posts, err = dao.GetAllPost(page, pageSize)
+		total = dao.CountGetAllPost()
+	} else {
+		posts, err = dao.GetPostPageBySlug(page, pageSize, slug)
+		total = dao.CountGetAllPostBySlug(slug)
+	}
+
 	var postMores []models.PostMore
 	for _, post := range posts {
 		categoryName := dao.GetCategoryNameById(post.CategoryId)
@@ -40,7 +50,6 @@ func GetAllIndexInfo(page int, pageSize int) (*models.HomeResponse, error) {
 		postMores = append(postMores, postMore)
 	}
 
-	total := dao.CountGetAllPost()
 	//获取总页数
 	pagesCount := (total-1)/10 + 1
 	var pages []int

@@ -7,6 +7,7 @@ import (
 	"personal-blog-go/common"
 	"personal-blog-go/service"
 	"strconv"
+	"strings"
 )
 
 func (receiver *HTMLApi) Index(w http.ResponseWriter, r *http.Request) {
@@ -27,8 +28,11 @@ func (receiver *HTMLApi) Index(w http.ResponseWriter, r *http.Request) {
 	//每页显示的数量
 	pageSize := 10
 
+	path := r.URL.Path
+	slug := strings.TrimPrefix(path, "/")
+
 	//页面上涉及到的所有数据，必须有定义
-	info, err := service.GetAllIndexInfo(page, pageSize)
+	info, err := service.GetAllIndexInfo(page, pageSize, slug)
 	if err != nil {
 		log.Println("Index获取数据出错", err)
 		index.WriteError(w, errors.New("系统错误，请联系管理员！"))
